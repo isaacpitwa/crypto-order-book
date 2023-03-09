@@ -2,7 +2,7 @@
 import { Flex, HStack, Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import * as React from 'react';
 type Props = {
-  type: 'buy' | 'sell';
+  type: 'bid' | 'ask';
 };
 export function Orderbook(props: Props) {
   return (

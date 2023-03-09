@@ -1,7 +1,7 @@
 import Header from '@/components/header'
 import { Orderbook } from '@/components/orderbook'
 import Selector from '@/components/selector'
-import { Box, Card, Flex, HStack,Tabs, TabList, TabPanels, Tab, TabPanel, Stack } from '@chakra-ui/react'
+import { Box, Card, Flex, HStack,Tabs, TabList, TabPanels, Tab, TabPanel, Stack, Text, Heading } from '@chakra-ui/react'
 import Head from 'next/head'
 export default function Home() {
   return (
@@ -17,9 +17,10 @@ export default function Home() {
             <Header/>
               <Flex p={16} justifyContent='space-around'>
                   <Box>
+                    <Heading size='sm'>BTC/USDT</Heading>
                     <HStack>
-                      <Orderbook type='buy'/>
-                      <Orderbook type='sell'/>
+                      <Orderbook type='bid'/>
+                      <Orderbook type='ask'/>
                     </HStack>
                   </Box>
                   <Selector/>
