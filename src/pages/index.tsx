@@ -3,7 +3,16 @@ import { Orderbook } from '@/components/orderbook'
 import Selector from '@/components/selector'
 import { Box, Card, Flex, HStack,Tabs, TabList, TabPanels, Tab, TabPanel, Stack, Text, Heading } from '@chakra-ui/react'
 import Head from 'next/head'
+import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
+import { useEffect } from 'react'
+import { fetchTokens } from '@/state/tokens/actions'
+
 export default function Home() {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchTokens());
+  }, [dispatch]);
+  
   return (
     <>
       <Head>
