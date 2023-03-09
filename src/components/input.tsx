@@ -17,6 +17,7 @@ import { Box, Card, Stack,Image, Text, TabPanels, Tab, TabPanel, Center, FormLab
 import { ChevronDownIcon} from '@chakra-ui/icons'
 
 import { useAppSelector } from '@/hooks/hooks';
+import { Token } from '@/state/tokens/actions';
 
 type Props = {
     label: string;
@@ -24,7 +25,7 @@ type Props = {
 };
 export const TokenInput = (props: Props) => {
     const { label,level } = props
-    const tokens = useAppSelector((state) => state.tokens);
+    const tokens:Token[] = useAppSelector((state) => state.tokens);
 
     return (
         <Stack my="4">
@@ -43,9 +44,14 @@ export const TokenInput = (props: Props) => {
                 <Input type="text" placeholder="Search"  my={2} size='sm'/>
                     <List spacing={3} my='2' >
 
-                        {   tokens.map((token) => (
-                                <ListItem key={token.address} >
-                                    <HStack>
+                        {   tokens.map((token: Token) => (
+                            <ListItem key={token.address} px='2' py='1'
+                            _hover={{
+                                border: '1px solid #000',
+                                borderRadius: '5px',
+                                cursor: 'pointer',
+                            }}>
+                                    <HStack >
                                         <Image src={token.logoURI} alt={token.name} boxSize="40px" objectFit="cover" />
                                         <Text> {token.name}</Text> - 
                                         <Text> {'-  '+token.symbol}</Text>
