@@ -16,9 +16,10 @@ import { Box, Card, Stack,Image, Text, TabPanels, Tab, TabPanel, Center, FormLab
     HStack, } from '@chakra-ui/react'
 import { ChevronDownIcon} from '@chakra-ui/icons'
 
-import { useAppSelector } from '@/hooks/hooks';
+import { useAppSelector,useAppDispatch } from '@/hooks/hooks';
 import { Token } from '@/state/tokens/actions';
-
+import { SELECTION_MADE } from '@/state/selection/actions';
+import { handleSelection } from '@/state/selection/actions';
 type Props = {
     label: string;
     level: 'base'| 'quote';
@@ -26,7 +27,11 @@ type Props = {
 export const TokenInput = (props: Props) => {
     const { label,level } = props
     const tokens:Token[] = useAppSelector((state) => state.tokens);
+    const dispatch = useAppDispatch();
 
+    const handleSelectAction = (token: Token)=> {
+        dispatch(handleSelection(level,token));
+    }
     return (
         <Stack my="4">
         <FormLabel>{label}</FormLabel>
@@ -50,7 +55,8 @@ export const TokenInput = (props: Props) => {
                                 border: '1px solid #000',
                                 borderRadius: '5px',
                                 cursor: 'pointer',
-                            }}>
+                            }}
+                            onClick={(e)=>{handleSelectAction(token)}}>
                                     <HStack >
                                         <Image src={token.logoURI} alt={token.name} boxSize="40px" objectFit="cover" />
                                         <Text> {token.name}</Text> - 

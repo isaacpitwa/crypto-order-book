@@ -2,12 +2,14 @@ import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
-import Tokens from './tokens/reducer';
+import TokensReducer from './tokens/reducer';
+import SelectionReducer from './selection/reducer';
 
 
 const loggerMiddleware = createLogger();
 const rootReducer = combineReducers({
-  tokens: Tokens,
+  tokens: TokensReducer,
+  selection:SelectionReducer
 });
 const store =configureStore({
   reducer: rootReducer,
