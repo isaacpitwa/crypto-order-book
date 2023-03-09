@@ -5,7 +5,7 @@ import { useAppSelector } from '../hooks/hooks';
 const Selector = () => {
 
     return (
-        <Card w='20vw' maxH='280px'>
+        <Card w='25vw' maxH='280px'>
             <Tabs>
                 <TabList>
                     <Tab>Market</Tab>

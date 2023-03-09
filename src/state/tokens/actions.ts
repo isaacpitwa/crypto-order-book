@@ -12,7 +12,6 @@ export type Token ={
 
 
 export  function fetchedTokens(apiResponse:any) {
-    console.log('fetchedTokens', apiResponse.tokens);
     return {
       type: FETCHED_TOKENS,
       tokens: apiResponse.tokens.filter((token:Token) => token.decimals ===18 ),
