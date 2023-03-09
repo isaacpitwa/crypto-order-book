@@ -9,14 +9,12 @@ const loggerMiddleware = createLogger();
 const rootReducer = combineReducers({
   tokens: Tokens,
 });
-const store =  configureStore({
+const store =configureStore({
   reducer: rootReducer,
   middleware:
 (getDefaultMiddleware) => getDefaultMiddleware().concat(loggerMiddleware).concat(thunkMiddleware),
 
 });
-
 export default store;
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
-
