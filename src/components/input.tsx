@@ -35,6 +35,16 @@ export const TokenInput = (props: Props) => {
         dispatch(handleSelection(level,token));
         onToggle();
     }
+    const [filteredTokens, setFilteredTokens] = React.useState<Token[]>(tokens);
+
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if(e.target.value.length > 0){
+            const filtered = tokens.filter((token: Token) => token.symbol.toLowerCase().includes(e.target.value.toLowerCase())|| token.name.toLowerCase().includes(e.target.value.toLowerCase()));
+            setFilteredTokens(filtered);
+        }else{
+            setFilteredTokens(tokens);
+        }
+    }
     return (
         <Stack my="4">
         <FormLabel>{label}</FormLabel>
@@ -42,7 +52,7 @@ export const TokenInput = (props: Props) => {
         isOpen={isOpen}
         onClose={onClose}>
             <PopoverTrigger>
-                <Button rightIcon={<ChevronDownIcon/>} onClick={onToggle}> { selection?.baseToken?.symbol ?? `Choose ${level} Token`}</Button>
+                <Button rightIcon={<ChevronDownIcon/>} onClick={onToggle}> { level == 'base'? selection?.baseToken?.symbol ?? `Choose ${level} Token`: selection?.quoteToken?.symbol ?? `Choose ${level} Token`}</Button>
             </PopoverTrigger>
             <PopoverContent>
                 <PopoverHeader>
@@ -51,10 +61,10 @@ export const TokenInput = (props: Props) => {
                 <PopoverCloseButton />
                 <PopoverBody maxH='300px' overflow='scroll'>
                 <PopoverArrow/>
-                <Input type="text" placeholder="Search"  my={2} size='sm'/>
+                <Input type="text" placeholder="Search"  my={2} size='sm' onChange={handleSearch}/>
                     <List spacing={3} my='2' >
 
-                        {   tokens.map((token: Token) => (
+                        {   filteredTokens.map((token: Token) => (
                             <ListItem key={token.address} px='2' py='1'
                             _hover={{
                                 border: '1px solid #000',
