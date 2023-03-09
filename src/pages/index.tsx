@@ -9,6 +9,7 @@ import { fetchTokens } from '@/state/tokens/actions'
 
 export default function Home() {
   const dispatch = useAppDispatch();
+  const selection = useAppSelector((state) => state.selection);
   useEffect(() => {
     dispatch(fetchTokens());
   }, [dispatch]);
@@ -26,7 +27,7 @@ export default function Home() {
             <Header/>
               <Flex p={16} justifyContent='space-around'>
                   <Box>
-                    <Heading size='sm'>BTC/USDT</Heading>
+                    <Heading size='sm'>{selection?.baseToken?.symbol ?? '_'}/{selection?.quoteToken?.symbol?? '_'}</Heading>
                     <HStack>
                       <Orderbook type='bid'/>
                       <Orderbook type='ask'/>

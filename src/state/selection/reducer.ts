@@ -6,9 +6,12 @@ type Action = {
     type: string;
     token: Token;
 }
+type ISelectionState = {
+    baseToken: Token;
+    quoteToken: Token;
+}
 
-
-export default function reducer(state = {}, action: Action = {} as Action) {
+export default function reducer(state = {} as ISelectionState, action: Action = {} as Action) {
     switch (action.type) {
       case SELECTION_MADE:
     return { ...state };

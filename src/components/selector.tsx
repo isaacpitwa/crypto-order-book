@@ -3,7 +3,6 @@ import { Box, Card, Input, Stack,Tabs, TabList, TabPanels, Tab, TabPanel } from 
 import { TokenInput } from './input';
 import { useAppSelector } from '../hooks/hooks';
 const Selector = () => {
-
     return (
         <Card w='25vw' maxH='280px'>
             <Tabs>

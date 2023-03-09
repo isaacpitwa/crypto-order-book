@@ -6,7 +6,7 @@ type Action = {
     type: string;
     tokens: Token[] ;
 }
-export default function reducer(state = [], action: Action = {} as Action) {
+export default function reducer(state: Token[] = [], action: Action = {} as Action) {
     switch (action.type) {
       case FETCH_TOKENS:
     return { ...state, tokens: action.tokens };

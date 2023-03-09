@@ -10,7 +10,7 @@ import { Box, Card, Stack,Image, Text, TabPanels, Tab, TabPanel, Center, FormLab
     PopoverCloseButton,
     PopoverAnchor,
     List,
-    ListIcon,
+    useDisclosure,
     ListItem,
     Input,
     HStack, } from '@chakra-ui/react'
@@ -26,22 +26,26 @@ type Props = {
 };
 export const TokenInput = (props: Props) => {
     const { label,level } = props
-    const tokens:Token[] = useAppSelector((state) => state.tokens);
+    const {tokens, selection } = useAppSelector((state) => state);
     const dispatch = useAppDispatch();
+    const { isOpen, onToggle, onClose } = useDisclosure()
 
     const handleSelectAction = (token: Token)=> {
         dispatch(handleSelection(level,token));
+        onToggle();
     }
     return (
         <Stack my="4">
         <FormLabel>{label}</FormLabel>
-        <Popover >
+        <Popover 
+        isOpen={isOpen}
+        onClose={onClose}>
             <PopoverTrigger>
-                <Button rightIcon={<ChevronDownIcon/>}>Choose Token</Button>
+                <Button rightIcon={<ChevronDownIcon/>} onClick={onToggle}>Choose  {level} Token</Button>
             </PopoverTrigger>
             <PopoverContent>
                 <PopoverHeader>
-                    Choose {level} Token
+                    { `Choose ${level} Token`}
                 </PopoverHeader>
                 <PopoverCloseButton />
                 <PopoverBody maxH='300px' overflow='scroll'>
