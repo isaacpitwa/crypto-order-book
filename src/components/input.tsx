@@ -24,6 +24,7 @@ type Props = {
     label: string;
     level: 'base'| 'quote';
 };
+
 export const TokenInput = (props: Props) => {
     const { label,level } = props
     const {tokens, selection } = useAppSelector((state) => state);
@@ -41,11 +42,11 @@ export const TokenInput = (props: Props) => {
         isOpen={isOpen}
         onClose={onClose}>
             <PopoverTrigger>
-                <Button rightIcon={<ChevronDownIcon/>} onClick={onToggle}>Choose  {level} Token</Button>
+                <Button rightIcon={<ChevronDownIcon/>} onClick={onToggle}> { selection?.baseToken?.symbol ?? `Choose ${level} Token`}</Button>
             </PopoverTrigger>
             <PopoverContent>
                 <PopoverHeader>
-                    { `Choose ${level} Token`}
+                    {`Choose ${level} Token`}
                 </PopoverHeader>
                 <PopoverCloseButton />
                 <PopoverBody maxH='300px' overflow='scroll'>
