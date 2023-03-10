@@ -2,6 +2,7 @@ import  { Token }  from "../tokens/actions";
 import store from '../store';
 import apiClient from "@/data/apiClient";
 import {  Depth } from "@/utils";
+import  useWebSocket  from "react-use-websocket";
 export const  SELECTION_MADE = '/cryptoOrderBook/SELECTION_MADE';
 export const  BASE_SELECTION_MADE = '/cryptoOrderBook/BASE_SELECTION_MADE';
 export const  QUOTE_SELECTION_MADE = '/cryptoOrderBook/QUOTE_SELECTION_MADE';
@@ -48,6 +49,20 @@ const handleUpdates = (bids: any[],asks:any) =>({
 
 
 
+export const addExistingState = ( payload:any) => {
+  const rawBids: number[][] = payload.bids;
+  const rawAsks: number[][] = payload.asks;
+  const bids: number[][] =[] //addTotalSums(groupByTicketSize(rawBids, current(state).groupingSize));
+  const asks: number[][] =[]// addTotalSums(groupByTicketSize(rawAsks, current(state).groupingSize));
+
+  // state.market = payload['product_id'];
+  // state.rawBids = rawBids;
+  // state.rawAsks = rawAsks;
+  // state.maxTotalBids = getMaxTotalSum(bids);
+  // state.maxTotalAsks = getMaxTotalSum(asks);
+  // state.bids = addDepths(bids, current(state).maxTotalBids);
+  // state.asks = addDepths(asks, current(state).maxTotalAsks);
+}
 const handleSelectionCompleted = () => async (dispatch: any) => {
     const {selection} = store.getState();
     if(selection.baseToken && selection.quoteToken){

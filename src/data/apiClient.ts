@@ -22,6 +22,10 @@ class ApiClient {
       const responseData = await response.json();
       return responseData;
     };
+
+    websocketURL = (baseToken:string,quoteToken:string) => {
+      return `wss://api.0x.org/orderbook/v1?makerToken=${baseToken}&takerToken=${quoteToken}`;
+    };
 }
 const apiClient = new ApiClient();
 export default apiClient;

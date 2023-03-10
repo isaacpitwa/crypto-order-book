@@ -54,6 +54,6 @@ export function calculateDepth(orderBook: OrderBook, precision: number): Depth[]
   export  const formatPrice = (arg: number): string => {
     return arg.toLocaleString("en", { useGrouping: true, minimumFractionDigits: 2, maximumFractionDigits: 8 })
   };
-  export const formatNumber = (arg: number): string => {
+export const formatNumber = (arg: number): string => {
     return new Intl.NumberFormat('en-US').format(arg);
-  };
+};
