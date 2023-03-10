@@ -9,9 +9,14 @@
     "Selector": {
       "youPay": "Sie bezahlen",
        "youGet": "Du erhältst",
-       "chooseBaseToken": "Wählen Sie Basis-Token",
+       "choosebaseToken": "Wählen Sie Basis-Token",
         "chooseQuoteToken": "Wählen Sie Angebotstoken ",
         "market": "Markt"
+    },
+    "Orderbook":{
+        "price": "Preis",
+        "quantity": "Menge",
+        "total": "gesamt"
     }
   }
   
