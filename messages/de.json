@@ -1,0 +1,17 @@
+{
+    "Base": {
+      "title": "Krypto-Auftragsbuch",
+      "description": "Erleben Sie Workbook Analytics in Echtzeit."
+    },
+    "LocaleSwitcher": {
+      "switchLocale": "Switch to {locale, select, de {German} en {English} other {Unknown}}"
+    },
+    "Selector": {
+      "youPay": "Sie bezahlen",
+       "youGet": "Du erhältst",
+       "chooseBaseToken": "Wählen Sie Basis-Token",
+        "chooseQuoteToken": "Wählen Sie Angebotstoken ",
+        "market": "Markt"
+    }
+  }
+  

@@ -15,6 +15,7 @@ import { Box, Card, Stack,Image, Text, TabPanels, Tab, TabPanel, Center, FormLab
     Input,
     HStack, } from '@chakra-ui/react'
 import { ChevronDownIcon} from '@chakra-ui/icons'
+import { useTranslations } from 'next-intl';
 
 import { useAppSelector,useAppDispatch } from '@/hooks/hooks';
 import { Token } from '@/state/tokens/actions';
@@ -30,6 +31,8 @@ export const TokenInput = (props: Props) => {
     const {tokens, selection } = useAppSelector((state) => state);
     const dispatch = useAppDispatch();
     const { isOpen, onToggle, onClose } = useDisclosure()
+    const t = useTranslations('Selector');
+
 
     const handleSelectAction = (token: Token)=> {
         dispatch(handleSelection(level,token));
@@ -50,11 +53,14 @@ export const TokenInput = (props: Props) => {
         isOpen={isOpen}
         onClose={onClose}>
             <PopoverTrigger>
-                <Button rightIcon={<ChevronDownIcon/>} onClick={onToggle}> { level == 'base'? selection?.baseToken?.symbol ?? `Choose ${level} Token`: selection?.quoteToken?.symbol ?? `Choose ${level} Token`}</Button>
+                <Button rightIcon={<ChevronDownIcon/>} onClick={onToggle}>
+                     { level == 'base'? selection?.baseToken?.symbol ?? t(`choose${level}Token`):
+                      selection?.quoteToken?.symbol ?? t(`choose${level}Token`)}
+                </Button>
             </PopoverTrigger>
             <PopoverContent>
                 <PopoverHeader>
-                    {`Choose ${level} Token`}
+                    {t(`choose${level}Token`)}
                 </PopoverHeader>
                 <PopoverCloseButton />
                 <PopoverBody maxH='300px' overflow='scroll'>

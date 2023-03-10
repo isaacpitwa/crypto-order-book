@@ -6,6 +6,7 @@ import * as React from 'react';
 import { useAppSelector } from '@/hooks/hooks';
 import { Order } from './order';
 import { Depth } from '@/utils';
+import { useTranslations } from 'next-intl';
 type Props = {
   type: 'bid' | 'ask';
   data: any[];
@@ -14,13 +15,15 @@ type Props = {
 export function Orderbook(props: Props) {
   const {type, data, depths} = props;
   const {quoteToken} = useAppSelector((state) => state.selection);
+  const t = useTranslations('Orderbook');
+
   return (
     <Table w='50%' >
         <Thead>
             <Tr>
-                <Th>Price ({quoteToken?.symbol})</Th>
-                <Th>Quantity ({quoteToken?.symbol})</Th>
-                <Th>Total ({quoteToken?.symbol})</Th>
+                <Th>{t('price')} ({quoteToken?.symbol})</Th>
+                <Th>{t('quantity')} ({quoteToken?.symbol})</Th>
+                <Th>{t('total')} ({quoteToken?.symbol})</Th>
             </Tr>
         </Thead>
         <Tbody>
