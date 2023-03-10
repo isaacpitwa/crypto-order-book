@@ -7,6 +7,8 @@ export const  SELECTION_MADE = '/cryptoOrderBook/SELECTION_MADE';
 export const  BASE_SELECTION_MADE = '/cryptoOrderBook/BASE_SELECTION_MADE';
 export const  QUOTE_SELECTION_MADE = '/cryptoOrderBook/QUOTE_SELECTION_MADE';
 export const  SELECTION_COMPLETED = '/cryptoOrderBook/SELECTION_COMPLETED';
+export const  WEBHOOK_DATA_ADDED = '/cryptoOrderBook/WEBHOOK_DATA_ADDED';
+
 
 
 export type IWorkbook = {
@@ -49,19 +51,14 @@ const handleUpdates = (bids: any[],asks:any) =>({
 
 
 
-export const addExistingState = ( payload:any) => {
-  const rawBids: number[][] = payload.bids;
-  const rawAsks: number[][] = payload.asks;
-  const bids: number[][] =[] //addTotalSums(groupByTicketSize(rawBids, current(state).groupingSize));
-  const asks: number[][] =[]// addTotalSums(groupByTicketSize(rawAsks, current(state).groupingSize));
-
-  // state.market = payload['product_id'];
-  // state.rawBids = rawBids;
-  // state.rawAsks = rawAsks;
-  // state.maxTotalBids = getMaxTotalSum(bids);
-  // state.maxTotalAsks = getMaxTotalSum(asks);
-  // state.bids = addDepths(bids, current(state).maxTotalBids);
-  // state.asks = addDepths(asks, current(state).maxTotalAsks);
+export const addExistingState = (payload:any) => {
+  const rawBids: any[] = payload.bids;
+  const rawAsks: any[] = payload.asks;
+  const bids: any[] =[] 
+  const asks: any[] =[]
+  return ({
+    type: WEBHOOK_DATA_ADDED,
+  })
 }
 const handleSelectionCompleted = () => async (dispatch: any) => {
     const {selection} = store.getState();
