@@ -7,11 +7,14 @@
       "switchLocale": "Switch to {locale, select, de {German} en {English} other {Unknown}}"
     },
     "Selector": {
-      "youPay": "Sie bezahlen",
-       "youGet": "Du erhältst",
-       "choosebaseToken": "Wählen Sie Basis-Token",
-        "chooseQuoteToken": "Wählen Sie Angebotstoken ",
-        "market": "Markt"
+        "youPay": "Sie bezahlen",
+        "youGet": "Du erhältst",
+        "choosebaseToken": "Wählen Sie Basis-Token",
+        "choosequoteToken": "Wählen Sie Angebotstoken ",
+        "market": "Markt",
+        "search": "Suche"
+
+        
     },
     "Orderbook":{
         "price": "Preis",

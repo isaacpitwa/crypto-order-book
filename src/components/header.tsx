@@ -19,6 +19,7 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
+import { getFlag } from '@/utils';
 
 
 export default function Nav() {
@@ -33,12 +34,12 @@ export default function Nav() {
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'} >
           <Box>{t('title')}</Box>
           <Flex alignItems={'center'}>
-            <Stack direction={'row'} spacing={7}>
+            <Stack direction={'row'} spacing={7} alignItems='center'>
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
               <Link href={route} locale={otherLocale}>
-                {otherLocale}
+                {getFlag(otherLocale)} {otherLocale}
               </Link>
             </Stack>
           </Flex>

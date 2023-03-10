@@ -11,7 +11,8 @@
        "youGet": "You Get",
        "choosebaseToken": "Choose Base Token",
         "choosequoteToken": "Choose Quote Token",
-        "market": "Market"
+        "market": "Market",
+        "search": "Search"
     },
     "Orderbook":{
         "price": "Price",

@@ -57,3 +57,7 @@ export function calculateDepth(orderBook: OrderBook, precision: number): Depth[]
 export const formatNumber = (arg: number): string => {
     return new Intl.NumberFormat('en-US').format(arg);
 };
+export const getFlag = (locale: string | undefined): string => {
+    if(locale === 'de') return '🇩🇪';
+    return '🇺🇸';
+}

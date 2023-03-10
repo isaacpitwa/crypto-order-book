@@ -65,7 +65,7 @@ export const TokenInput = (props: Props) => {
                 <PopoverCloseButton />
                 <PopoverBody maxH='300px' overflow='scroll'>
                 <PopoverArrow/>
-                <Input type="text" placeholder="Search"  my={2} size='sm' onChange={handleSearch}/>
+                <Input type="text" placeholder={t('search')}  my={2} size='sm' onChange={handleSearch}/>
                     <List spacing={3} my='2' >
 
                         {   filteredTokens.map((token: Token) => (
