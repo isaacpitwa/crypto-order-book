@@ -23,14 +23,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-          <Stack minH='100vh'>
+          <Stack h='100vh' overflow='hidden'>
             <Header/>
-              <Flex p={16} justifyContent='space-around'>
+              <Flex p={16} justifyContent='space-around' overflow='hidden'>
                   <Box>
                     <Heading size='sm'>{selection?.baseToken?.symbol ?? '_'}/{selection?.quoteToken?.symbol?? '_'}</Heading>
-                    <HStack>
-                      <Orderbook type='bid'/>
-                      <Orderbook type='ask'/>
+                    <HStack  alignItems='flex-start' overflow='scroll'>
+                        <Orderbook type='bid' data={selection?.bids} depths={ selection?.depths}/>
+                        <Orderbook type='ask' data={selection?.asks} depths={ selection?.depths}/>
                     </HStack>
                   </Box>
                   <Selector/>

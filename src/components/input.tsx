@@ -41,8 +41,6 @@ export const TokenInput = (props: Props) => {
         if(e.target.value.length > 0){
             const filtered = tokens.filter((token: Token) => token.symbol.toLowerCase().includes(e.target.value.toLowerCase())|| token.name.toLowerCase().includes(e.target.value.toLowerCase()));
             setFilteredTokens(filtered);
-        }else{
-            setFilteredTokens(tokens);
         }
     }
     return (

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Box, Card, Input, Stack,Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import { TokenInput } from './input';
-import { useAppSelector } from '../hooks/hooks';
 const Selector = () => {
     return (
-        <Card w='25vw' maxH='280px'>
+        <Card w='20%' maxH='280px'>
             <Tabs>
                 <TabList>
                     <Tab>Market</Tab>
