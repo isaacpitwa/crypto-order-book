@@ -19,7 +19,7 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
-import { getFlag } from '@/utils';
+import { getFlag } from '../../../helpers';
 
 
 export default function Nav() {

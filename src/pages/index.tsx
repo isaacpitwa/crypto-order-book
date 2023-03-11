@@ -1,15 +1,15 @@
 import { GetStaticPropsContext } from 'next';
 import Header from '@/components/header'
-import { Orderbook } from '@/components/orderBook/orderbook'
+import { Orderbook } from '@/components/orderBook'
 import Selector from '@/components/selector'
 import { Box, Card, Flex, HStack,Tabs, TabList, TabPanels, Tab, TabPanel, Stack, Text, Heading } from '@chakra-ui/react'
 import Head from 'next/head'
 import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
 import { useEffect } from 'react'
-import { fetchTokens } from '@/state/tokens/actions'
+import { fetchTokens } from '@/redux/tokens/actions'
 import useWebSocket from 'react-use-websocket';
 import apiClient from '@/data/apiClient'
-import { addExistingState } from '@/state/selection/actions'
+import { addExistingState } from '@/redux/selection/actions'
 import { useTranslations } from 'next-intl';
 
 

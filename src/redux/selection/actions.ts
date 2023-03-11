@@ -1,7 +1,7 @@
 import  { Token }  from "../tokens/actions";
 import store from '../store';
 import apiClient from "@/data/apiClient";
-import {  Depth } from "@/utils";
+import {  Depth } from "../../../helpers";
 export const  SELECTION_MADE = '/cryptoOrderBook/SELECTION_MADE';
 export const  BASE_SELECTION_MADE = '/cryptoOrderBook/BASE_SELECTION_MADE';
 export const  QUOTE_SELECTION_MADE = '/cryptoOrderBook/QUOTE_SELECTION_MADE';

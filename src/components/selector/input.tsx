@@ -18,8 +18,8 @@ import { ChevronDownIcon} from '@chakra-ui/icons'
 import { useTranslations } from 'next-intl';
 
 import { useAppSelector,useAppDispatch } from '@/hooks/hooks';
-import { Token } from '@/state/tokens/actions';
-import { handleSelection } from '@/state/selection/actions';
+import { Token } from '@/redux/tokens/actions';
+import { handleSelection } from '@/redux/selection/actions';
 type Props = {
     label: string;
     level: 'base'| 'quote';

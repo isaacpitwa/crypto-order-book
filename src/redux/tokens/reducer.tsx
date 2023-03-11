@@ -1,6 +1,6 @@
 
 import { FETCH_TOKENS, FETCHED_TOKENS } from "./actions";
-import { Token } from '@/state/tokens/actions';
+import { Token } from '@/redux/tokens/actions';
 
 type Action = {
     type: string;

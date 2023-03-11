@@ -1,7 +1,7 @@
-import { formatNumber } from '../../utils';
+import { formatNumber } from '../../../helpers';
 import { Table, Tbody } from '@chakra-ui/react';
 import { render, screen } from '@testing-library/react';
-import { Order } from './order';
+import { Order } from '.';
 
 const bitOrder = {
     sender: "0x0000000000000000000000000000000000000000",

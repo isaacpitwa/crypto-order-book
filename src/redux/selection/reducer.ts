@@ -1,6 +1,6 @@
 
 // import { SELECTION_MADE, BASE_SELECTION_MADE,QUOTE_SELECTION_MADE, SELECTION_COMPLETED, IWorkbook } from "./actions";
-import { Token } from '@/state/tokens/actions';
+import { Token } from '@/redux/tokens/actions';
 import { Depth } from "@/utils";
 import { IWorkbook } from './actions';
 export const  SELECTION_MADE = '/cryptoOrderBook/SELECTION_MADE';

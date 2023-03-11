@@ -1,8 +1,7 @@
-// @flow 
 import * as React from 'react';
 import { uid } from 'uid';
-import { Box, HStack, Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
-import { Depth, formatNumber, formatPrice } from '../../utils';
+import { Td,Tr } from '@chakra-ui/react';
+import {formatNumber } from '../../../helpers';
 
 type Props = {
     order: any,
