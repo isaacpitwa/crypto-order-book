@@ -27,8 +27,7 @@ export default function Home() {
 
   const processMessages = (event: { data: string; }) => {
     const response: any  = JSON.parse(event.data);
-    console.log("Websocket Response: ", response );
-    if (response.numLevels) {
+    if (response.order) {
       dispatch(addExistingState(response));
     } else {
       process(response);
