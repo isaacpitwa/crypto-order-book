@@ -54,7 +54,7 @@ export default function Home() {
       <main>
           <Stack minH='100vh' >
             <Header/>
-              <Flex p={16} justifyContent='space-around' direction={{base:'column-reverse', lg:'row'}}>
+              <Flex p={16} justifyContent='space-around' direction={{base:'column-reverse', lg:'row'}} overflowX='scroll'>
               {selection.message !=null ? <Text>{selection.message}</Text>: (
               <Box pt={{base:4,lg:'0'}}>
                     <Heading size='sm'>{selection?.baseToken?.symbol ?? '_'}/{selection?.quoteToken?.symbol?? '_'}</Heading>
