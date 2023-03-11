@@ -1,6 +1,5 @@
 
-import { type } from 'os';
-import SelectionReducer , {ISelectionState} from './reducer';
+import SelectionReducer from './reducer';
 
 test('should return the initial state', () => {
   expect(SelectionReducer(undefined , {} as any)).toEqual({});

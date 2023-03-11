@@ -1,11 +1,10 @@
 // @flow
-import { IWorkbookResponse } from '@/state/selection/actions';
 import { Flex, HStack, Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import { uid } from 'uid';
 import * as React from 'react';
-import { useAppSelector } from '@/hooks/hooks';
-import { Order } from './order';
-import { Depth } from '@/utils';
+import { useAppSelector } from '../../hooks/hooks';
+import { Order } from '../order/order';
+import { Depth } from '../../utils';
 import { useTranslations } from 'next-intl';
 type Props = {
   type: 'bid' | 'ask';
@@ -42,3 +41,4 @@ export function Orderbook(props: Props) {
     </Table>
   );
 };
+export default Orderbook;

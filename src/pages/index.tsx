@@ -1,6 +1,6 @@
 import { GetStaticPropsContext } from 'next';
 import Header from '@/components/header'
-import { Orderbook } from '@/components/orderbook'
+import { Orderbook } from '@/components/orderBook/orderbook'
 import Selector from '@/components/selector'
 import { Box, Card, Flex, HStack,Tabs, TabList, TabPanels, Tab, TabPanel, Stack, Text, Heading } from '@chakra-ui/react'
 import Head from 'next/head'

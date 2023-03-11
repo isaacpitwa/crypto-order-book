@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { uid } from 'uid';
 import { Box, HStack, Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
-import { Depth, formatNumber, formatPrice } from '@/utils';
+import { Depth, formatNumber, formatPrice } from '../../utils';
 
 type Props = {
     order: any,
@@ -26,10 +26,10 @@ export const Order = (props: Props) => {
             position: "relative",
             zIndex: 1,
           }}  border='0'>
-                <Td  zIndex='1' fontSize='xs'>{price}</Td>
-                <Td zIndex='1' fontSize='xs'>{size}</Td>
-                <Td zIndex='1' fontSize='xs'>{total}</Td>
-                <Box
+                <Td  zIndex='1' fontSize='xs'  data-testid='order-price'>{price}</Td>
+                <Td zIndex='1' fontSize='xs' data-testid='order-size'>{size}</Td>
+                <Td zIndex='1' fontSize='xs' data-testid='order-total'>{total}</Td>
+                <Td
                 style={{
                     backgroundColor: `${isBid ? DepthVisualizerColors.BIDS : DepthVisualizerColors.ASKS}`,
                     height: "3.3em",
