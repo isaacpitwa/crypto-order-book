@@ -19,7 +19,6 @@ import { useTranslations } from 'next-intl';
 
 import { useAppSelector,useAppDispatch } from '@/hooks/hooks';
 import { Token } from '@/state/tokens/actions';
-import { SELECTION_MADE } from '@/state/selection/actions';
 import { handleSelection } from '@/state/selection/actions';
 type Props = {
     label: string;
