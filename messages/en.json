@@ -1,0 +1,23 @@
+{
+    "Base": {
+      "title": "Crypto Order Book",
+      "description": "Experience real time Workbook Analytics ."
+    },
+    "LocaleSwitcher": {
+      "switchLocale": "Switch to {locale, select, de {German} en {English} other {Unknown}}"
+    },
+    "Selector": {
+      "youPay": "You Pay",
+       "youGet": "You Get",
+       "choosebaseToken": "Base Token",
+        "choosequoteToken": "Quote Token",
+        "market": "Market",
+        "search": "Search"
+    },
+    "Orderbook":{
+        "price": "Price",
+        "quantity": "Quatity",
+        "total": "Total"
+    }
+  }
+  

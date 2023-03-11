@@ -1,38 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Crypto Order book
 
-## Getting Started
+## Requirements
 
-First, run the development server:
+For development, you will only need Node.js installed on your environement.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Node
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[Node](http://nodejs.org/) is really easy to install & now include [NPM](https://npmjs.org/).
+You should be able to run the following command after the installation procedure
+below.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+    $ node --version
+    v17.0.1
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+    $ npm --version
+    8.5.3
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Just go on [official Node.js website](http://nodejs.org/) & grab the installer.
+Also, be sure to have `git` available in your PATH, `npm` or `yarn` might need it.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## Install
 
-To learn more about Next.js, take a look at the following resources:
+    $ git clone https://github.com/isaacpitwa/crypto-order-book.git
+    $ cd crypto-order-book
+    $ npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Configure app
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Create `.env` and after Copy `example.env` content into it. then edit it with the url where you have setup:
 
-## Deploy on Vercel
+- backend api
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Start & watch
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    $ yarn dev
+
+or
+
+    $ npm run dev
+
+## Simple build for production
+
+    $ yarn build
+
+or 
+
+    $ npm run build
+
+## Update sources
+
+Some packages usages might change so you should run `npm prune` & `npm install` often.
+A common way to update is by doing
+
+    $ git pull
+    $ npm prune
+    $ npm install
+
+To run those 3 commands you can just do
+
+    $ npm run pull
+
+---
+
+## Languages & tools
+
+### HTML
+
+- Used Html in the public file for the application
+
+### Typescript
+
+- [Redux toolkit](https://redux-toolkit.js.org/) is used to to manage application state.
+- [Axios](https://axios-http.com/docs/intro) is used to make api calls.
+- [Next](https://nextjs.org/t) is used for UI.
+- [Redux saga](https://redux-saga.js.org/) is use to manage side effects in the application (asynchronous actions)
+- [Chakra Ui](https://chakra-ui.com/) is used to provide the theme of the application
+- [next-intl](https://next-intl-docs.vercel.app/) is use to provide translations in the application
+
+### CSS
+
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/) is use to make custom css for individual components.

@@ -1,0 +1,1 @@
+export const WEB_SOCKET_URL = 'wss://api.gemini.com/v1/marketdata/btcusd';
