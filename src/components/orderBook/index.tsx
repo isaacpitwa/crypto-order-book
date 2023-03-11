@@ -17,7 +17,7 @@ export function Orderbook(props: Props) {
   const t = useTranslations('Orderbook');
 
   return (
-    <Table w={{lg:'50%',base:'100%'}} overflowY='scroll'>
+    <Table w={{lg:'50%',base:'100%'}}>
         <Thead>
             <Tr>
                 <Th whiteSpace='nowrap'>{t('price')} ({quoteToken?.symbol})</Th>
