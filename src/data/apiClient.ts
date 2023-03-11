@@ -23,7 +23,7 @@ class ApiClient {
       return responseData;
     };
 
-    websocketURL = (baseToken:string,quoteToken:string) => {
+    websocketURL = (baseToken:string|null|undefined,quoteToken:string|null|undefined) => {
       return `wss://api.0x.org/orderbook/v1?makerToken=${baseToken}&takerToken=${quoteToken}`;
     };
 }
