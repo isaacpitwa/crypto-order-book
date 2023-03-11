@@ -18,12 +18,12 @@ export default function Home() {
   const selection = useAppSelector((state) => state.selection);
   const t = useTranslations('Base');
 
-  const { sendJsonMessage, getWebSocket } = useWebSocket(apiClient.websocketURL(selection?.baseToken?.address,selection?.quoteToken?.address), {
-    onOpen: () => console.log('WebSocket connection opened.'),
-    onClose: () => console.log('WebSocket connection closed.'),
-    shouldReconnect: (closeEvent) => true,
-    onMessage: (event: WebSocketEventMap['message']) =>  processMessages(event)
-  });
+    const { sendJsonMessage, getWebSocket } = useWebSocket(apiClient.websocketURL(selection.baseToken?.address,selection?.quoteToken?.address), {
+      onOpen: () => console.log('WebSocket connection opened.'),
+      onClose: () => console.log('WebSocket connection closed.'),
+      shouldReconnect: (closeEvent) => true,
+      onMessage: (event: WebSocketEventMap['message']) =>  processMessages(event)
+    });
 
   const processMessages = (event: { data: string; }) => {
     const response: any  = JSON.parse(event.data);
