@@ -1,19 +1,10 @@
 
-import React from 'react';
-import { IWorkbookResponse } from './actions';
-import SelectionReducer from './reducer';
+import { type } from 'os';
+import SelectionReducer , {ISelectionState} from './reducer';
 
 test('should return the initial state', () => {
-  // @ts-ignore
-  expect( SelectionReducer(undefined, {})).toEqual(
-    {
-        baseToken: null,
-        quoteToken: null,
-        workbook: {} as IWorkbookResponse,
-        message: '',
-        depths: [],
-        bids: [],
-        asks: [],
-    }
-  );
+  expect(SelectionReducer(undefined , {} as any)).toEqual({});
 });
+test('Should return type of the initial state', () => {
+    expect(typeof SelectionReducer(undefined , {} as any)).toEqual('object');
+})

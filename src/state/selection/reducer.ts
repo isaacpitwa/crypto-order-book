@@ -1,7 +1,13 @@
 
-import { SELECTION_MADE, BASE_SELECTION_MADE,QUOTE_SELECTION_MADE, SELECTION_COMPLETED, IWorkbook } from "./actions";
+// import { SELECTION_MADE, BASE_SELECTION_MADE,QUOTE_SELECTION_MADE, SELECTION_COMPLETED, IWorkbook } from "./actions";
 import { Token } from '@/state/tokens/actions';
 import { Depth } from "@/utils";
+import { IWorkbook } from './actions';
+export const  SELECTION_MADE = '/cryptoOrderBook/SELECTION_MADE';
+export const  BASE_SELECTION_MADE = '/cryptoOrderBook/BASE_SELECTION_MADE';
+export const  QUOTE_SELECTION_MADE = '/cryptoOrderBook/QUOTE_SELECTION_MADE';
+export const  SELECTION_COMPLETED = '/cryptoOrderBook/SELECTION_COMPLETED';
+export const  WEBHOOK_DATA_ADDED = '/cryptoOrderBook/WEBHOOK_DATA_ADDED';
 
 type Action = {
     type: string;
@@ -12,7 +18,7 @@ type Action = {
     bids: any[];
     asks: any[];
 }
-type ISelectionState = {
+export type ISelectionState = {
     baseToken: Token;
     quoteToken: Token;
     message: string;

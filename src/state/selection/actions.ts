@@ -10,7 +10,6 @@ export const  SELECTION_COMPLETED = '/cryptoOrderBook/SELECTION_COMPLETED';
 export const  WEBHOOK_DATA_ADDED = '/cryptoOrderBook/WEBHOOK_DATA_ADDED';
 
 
-
 export type IWorkbook = {
     bids: IWorkbookResponse;
     asks: IWorkbookResponse;
