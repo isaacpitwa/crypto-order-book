@@ -6,7 +6,7 @@ const Selector = () => {
     const t = useTranslations('Selector');
 
     return (
-        <Card w='20%' maxH='280px'>
+        <Card minW={{lg:'18%',base:'100%'}} maxH='280px'>
             <Tabs>
                 <TabList>
                     <Tab>{t('market')}</Tab>

@@ -19,6 +19,9 @@ export const formatPrice = (arg: number): string => {
 export const formatNumber = (arg: number): string => {
     return new Intl.NumberFormat('en-US').format(arg);
 };
+function kFormatter(num:number) {
+    return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000)) + 'k' : Math.sign(num)*Math.abs(num)
+}
 export const getFlag = (locale: string | undefined): string => {
     if (locale === 'de') return '🇩🇪';
     return '🇺🇸';

@@ -20,6 +20,7 @@ import { useTranslations } from 'next-intl';
 import { useAppSelector,useAppDispatch } from '@/hooks/hooks';
 import { Token } from '@/redux/tokens/actions';
 import { handleSelection } from '@/redux/selection/actions';
+import { ISelectionState } from '@/redux/selection/reducer';
 type Props = {
     label: string;
     level: 'base'| 'quote';
@@ -43,6 +44,8 @@ export const TokenInput = (props: Props) => {
         if(e.target.value.length > 0){
             const filtered = tokens.filter((token: Token) => token.symbol.toLowerCase().includes(e.target.value.toLowerCase())|| token.name.toLowerCase().includes(e.target.value.toLowerCase()));
             setFilteredTokens(filtered);
+        }else{
+            setFilteredTokens(tokens);
         }
     }
     return (

@@ -9,8 +9,8 @@
     "Selector": {
         "youPay": "Sie bezahlen",
         "youGet": "Du erhältst",
-        "choosebaseToken": "Wählen Sie Basis-Token",
-        "choosequoteToken": "Wählen Sie Angebotstoken ",
+        "choosebaseToken": "Sie Basis-Token",
+        "choosequoteToken": "Sie Angebotstoken ",
         "market": "Markt",
         "search": "Suche"
 

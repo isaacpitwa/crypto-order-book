@@ -52,16 +52,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-          <Stack h='100vh' overflow='hidden'>
+          <Stack minH='100vh' overflow='scroll'>
             <Header/>
-              <Flex p={16} justifyContent='space-around' overflow='hidden'>
-                  <Box>
+              <Flex p={16} justifyContent='space-around' overflow={{base:'scroll', lg:'hidden'}} direction={{base:'column-reverse', lg:'row'}}  h='100vh'>
+              {selection.message !=null ? <Text>{selection.message}</Text>: (<Box pt={{base:4,lg:'0'}}>
                     <Heading size='sm'>{selection?.baseToken?.symbol ?? '_'}/{selection?.quoteToken?.symbol?? '_'}</Heading>
-                    <HStack  alignItems='flex-start' overflow='scroll'>
+                    <Flex  alignItems='flex-start' direction={{lg:'row',base:'column'}} overflowY='scroll'>
                         <Orderbook type='bid' data={selection?.bids} depths={ selection?.depths}/>
                         <Orderbook type='ask' data={selection?.asks} depths={ selection?.depths}/>
-                    </HStack>
-                  </Box>
+                    </Flex>
+                  </Box>)}
                   <Selector/>
               </Flex>
           </Stack>

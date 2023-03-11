@@ -17,12 +17,12 @@ export function Orderbook(props: Props) {
   const t = useTranslations('Orderbook');
 
   return (
-    <Table w='50%' >
+    <Table w={{lg:'50%',base:'100%'}} overflowY='scroll'>
         <Thead>
             <Tr>
-                <Th>{t('price')} ({quoteToken?.symbol})</Th>
-                <Th>{t('quantity')} ({quoteToken?.symbol})</Th>
-                <Th>{t('total')} ({quoteToken?.symbol})</Th>
+                <Th whiteSpace='nowrap'>{t('price')} ({quoteToken?.symbol})</Th>
+                <Th whiteSpace='nowrap'>{t('quantity')} ({quoteToken?.symbol})</Th>
+                <Th whiteSpace='nowrap'>{t('total')} ({quoteToken?.symbol})</Th>
             </Tr>
         </Thead>
         <Tbody>
